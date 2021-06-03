@@ -10,12 +10,12 @@ QUIZ GAME by C Programming
 #include<conio.h>
 
 struct play {
-            char name[20];
+            char name[10];
             int score;
             int rat;       //star ratings
 }p;
 
-void high_score();
+void best_score();
 void start();
 void help();
 
@@ -23,7 +23,7 @@ void main()
 {
        int chc=0;
 
-    printf("Press 1 to start the game\n2 to see high scores \n3 to see game help\n0 to exit :   ");
+    printf("Press 1 to start the game\n2 to see best score \n3 to see game help\n0 to exit :   ");
     scanf("%d",&chc);
 
     switch(chc)
@@ -33,7 +33,7 @@ void main()
         break;
 
         case 2:
-        high_score();
+        best_score();
         break;
 
         case 3:
@@ -92,7 +92,7 @@ void start()
              }
 
 
-        printf("\nPlease enter your name: ");
+        printf("\nPlease enter your nick name: ");
         scanf("%s",p.name);
 
 
@@ -205,6 +205,7 @@ void start()
         {
             printf("Wrong answer! Correct answer is 2.早上好\n\n");
         }
+        /* YOU MUST HAVE INSTALLED CHINESE LANGUAGE ON YOUR IDE BESIDE ENGLISH*/ 
 
         printf("Q(8). 2022 winter olympic will be held at \n1.Beijing\t2. Madrid\n3. Tokyo \t4. London\n\n");
         printf("Your answer: ");
@@ -255,7 +256,7 @@ void start()
         {
                 printf("Thanks for playing, Your scored: %d points \t", count*10);
 
-                p.score=count*5;
+                p.score=count*10;
 
                 if(p.score >= 80)
                 {
@@ -294,7 +295,7 @@ void start()
         }
 }
 
-void high_score()
+void best_score()
 {
 
     int ch;
@@ -308,7 +309,7 @@ void high_score()
             else
             {
 
-    printf("\n_____________ HIGH SCORES________________\n\n");
+    printf("\n_____________ BEST SCORE ________________\n\n");
     printf("NAME     POINTS     RATING\n");
     while(fscanf(fp,"%s %d %d",p.name,&p.score, &p.rat) !=EOF)
     {
