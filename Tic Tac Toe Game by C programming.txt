@@ -49,6 +49,7 @@ else if (choice == 2 && square[2] == '2')
         player++;
     }while (i ==  - 1);
     board();
+    /* DROP THE FEEDBACK ON MY GITHUB ACCOUNT */
     if (i == 1)
         printf("==>\aPlayer %d win ", --player);
     else
@@ -57,7 +58,7 @@ else if (choice == 2 && square[2] == '2')
     getch();
     return 0;
 }
-int checkwin()
+int checkwin();
 {
     if (square[1] == square[2] && square[2] == square[3])
         return 1;
